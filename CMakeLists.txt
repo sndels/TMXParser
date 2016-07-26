@@ -33,13 +33,9 @@ if (NOT USE_MINIZ)
     find_package(ZLIB)
 endif (NOT USE_MINIZ)
 
-set(LIB_CFLAGS "-pedantic -Wall -Werror=strict-prototypes -Werror=old-style-definition -Werror=missing-prototypes")
+set(LIB_CFLAGS "-pedantic")
 
-if (NOT USE_MINIZ)
-    list(APPEND ${LIB_CFLAGS} "-Werror")
-endif (NOT USE_MINIZ)
-
-set(EXAMPLE_CFLAGS "-pedantic -Werror -Wall")
+set(EXAMPLE_CFLAGS "-pedantic")
 #include_directories("${PROJECT_SOURCE_DIR}/include")
 
 add_library(tmxparser_static STATIC ${SOURCES} ${HEADERS})
